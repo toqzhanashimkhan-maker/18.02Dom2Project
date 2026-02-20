@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+    </style>
+</head>
+<body>
+    <div id="button-panel">
+  <button data-color="beige">Beige</button>
+  <button data-color="pink">Pink</button>
+  <button data-color="lightblue">Light Blue</button>
+  <button data-color="lightyellow">Light Yellow</button>
+  
+  <button id="reset-btn">Reset</button>
+</div>
+
+<script>
+    const panel = document.querySelector('#button-panel');
+
+panel.addEventListener('click', (event) => {
+ 
+  const color = event.target.dataset.color;
+
+  if (color) {
+   
+    document.body.style.backgroundColor = color;
+  } 
+  
+ 
+  if (event.target.id === 'reset-btn') {
+    document.body.style.backgroundColor = 'white';
+  }
+});
+</script>
+</body>
+</html>
